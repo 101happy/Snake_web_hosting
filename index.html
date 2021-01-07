@@ -1,8 +1,17 @@
+<!DOCTYPE html>
+<body>
+	<link href="style.css" rel="stylesheet">
+</body>
 <head>
     <link rel="icon" href="favicon.png"/>
-    <title>Snake</title>
+	<title>Snake Web</title>
 </head>
+<p>
+	<span>Snake Web</span>
+</p>
 <canvas id="gc" width="400" height="400"></canvas>
+<div id="bestscore"></div>
+<div id="score"></div>
 <script>
 window.onload=function() {
 	canv=document.getElementById("gc");
@@ -15,7 +24,7 @@ gs=tc=20;
 ax=ay=15;
 xv=yv=0;
 trail=[];
-tail = 5;
+tail = 2;
 function game() {
 	px+=xv;
 	py+=yv;
@@ -34,11 +43,11 @@ function game() {
 	ctx.fillStyle="black";
 	ctx.fillRect(0,0,canv.width,canv.height);
 
-	ctx.fillStyle="lime";
+	ctx.fillStyle="green";
 	for(var i=0;i<trail.length;i++) {
 		ctx.fillRect(trail[i].x*gs,trail[i].y*gs,gs-2,gs-2);
 		if(trail[i].x==px && trail[i].y==py) {
-			tail = 5;
+			tail = 1;
 		}
 	}
 	trail.push({x:px,y:py});
