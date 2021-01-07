@@ -1,0 +1,9 @@
+body {
+    background-color: gray;
+}
+
+span {
+    font-family: fantasy;
+    font-size: larger;
+    color: white;
+}
